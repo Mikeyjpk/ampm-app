@@ -13,9 +13,7 @@ interface EventDisplayProps {
     subtitle: string;
     fullDate: string;
 
-
     allAges?: boolean;
-    headline?: string;
     shortDate?: string;
 }
 
@@ -25,11 +23,10 @@ const EventDisplay: React.FC<EventDisplayProps> = ({
     subtitle,
 
     allAges,
-    headline,
     shortDate,
 }) => {
     return (
-        <div className='flex flex-col'>
+        <div className='flex flex-col px-2'>
             <div className=" py-6">
                 <div className='flex flex-row bg-orange-200 w-20 h-4 items-center justify-center rounded-full'>
                 <div className="font-semibold text-xs">
@@ -136,7 +133,7 @@ const EventDisplay: React.FC<EventDisplayProps> = ({
                 </div>
                 <div className='flex flex-col gap-3 pb-2 border-b-2 border-dashed text-sm'>
                     <div>
-                        Burdekin Saturdays is a  two-level party takeover at the Burdekin Hotel, making dance floor heat from 8pm till late. Anti-social will always be on Level 1, with the Ground Floor supplying party beats each week.
+                        Burdekin Saturdays is a two-level party takeover at the Burdekin Hotel, making dance floor heat from 8pm till late. Anti-social will always be on Level 1, with the Ground Floor supplying party beats each week.
                     </div>
                     <div>
                         May 20: Resident DJs
