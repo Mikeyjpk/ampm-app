@@ -113,7 +113,7 @@ const EventDisplay: React.FC<EventDisplayProps> = ({
                 </div>
                 <div className='text-sm text-neutral-700 border-b-2 border-dashed'>
                     <div>
-                        Alternative, Rock, Pop-Punk & Emo Anthems from 10:00pm 'til they kick us out, every Saturday night. 
+                        Alternative, Rock, Pop-Punk &amp; Emo Anthems from 10:00pm &apos;til they kick us out, every Saturday night. 
                     </div>
                     <div>
                         From Blink-182 and Good Charlotte, through to Bring Me The Horizon, A Day To Remember, Paramore, The Killers, and everything in between.
