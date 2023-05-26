@@ -1,7 +1,7 @@
 import getEventById from "@/app/actions/getEventById";
 
 import ClientOnly from "@/app/components/ClientOnly";
-import Container from "@/app/components/Container";
+
 import EmptyState from "@/app/components/EmptyState";
 import EventBriteButton from "@/app/components/EventBriteButton";
 import HeaderImage from "@/app/components/HeaderImage";
