@@ -54,7 +54,7 @@ const EventBriteButton: React.FC<EventBriteButtonProps> = ({
     return () => {
       document.body.removeChild(script);
     };
-  }, [orderComplete]);
+  }, [orderComplete, eventIdNumber]);
 
   return (
     <>

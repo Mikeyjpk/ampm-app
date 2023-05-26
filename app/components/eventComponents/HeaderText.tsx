@@ -41,14 +41,12 @@ const HeaderText: React.FC<HeaderProps> = ({
             </div>
 
             <div className={titleFont.className}>
-                <div className='text-5xl flex'>
-                    <div className="pt-[6px]">ANTI</div>
-                    <div className="text-6xl">//</div>
-                    <div className="pt-[6px]">SOCIAL</div>
+                <div className='text-5xl pt-2'>
+                    ANTI//SOCIAL
                 </div>
             </div>
             
-            <div className="font-semibold">
+            <div className="font-semibold pb-1">
                 {heading}
             </div>
 
