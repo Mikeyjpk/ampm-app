@@ -27,12 +27,9 @@ const EventCard: React.FC<EventCardProps> = ({
     return (
         <div className="py-2 border-b-2 border-dashed pb-4 relative">  
             <div className="flex flex-row justify-between md:justify-evenly align-baseline px-4">
-                <div className="text-md">
-                    <div className="text-neutral-600">
-                        {data.date}
-                    </div>
+                <div className="text-md pt-3.5">
                     <div className="font-semibold">
-                        {data.heading}
+                        {data.date}
                     </div>
                 </div>
                 <div className="w-2/6">

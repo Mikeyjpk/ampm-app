@@ -27,6 +27,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({visible, currentUser}) => {
             flex
             justify-end
             
+            py-2
             px-4
             rounded-md 
             shadow-md

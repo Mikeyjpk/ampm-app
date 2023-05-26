@@ -98,6 +98,7 @@ const EventModal = () => {
                 disabled={isLoading}
                 register={register}
                 errors={errors}
+                required
             />
             < hr />
             <Input 

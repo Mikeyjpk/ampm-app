@@ -34,7 +34,7 @@ const Button: React.FC<ButtonProps> = ({
             transition
             ${menuItem ? 'w-1/5' : 'w-full'}
             ${outline ? '' : 'bg-neutral-700'}
-            ${outline ? 'border-black' : ''}
+            ${outline ? 'border-black' : 'border-black'}
             ${outline ? 'text-black' : 'text-white'}
             ${small ? 'text-sm' : 'text-md'}
             ${small ? 'py-1' : 'py-3'}

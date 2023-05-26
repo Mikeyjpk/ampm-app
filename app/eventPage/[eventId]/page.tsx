@@ -25,7 +25,9 @@ const EventPage = async ({ params }: { params: IParams}) => {
     }
     return (
         <ClientOnly>
-            <HeaderImage />
+            <div className="px-2">
+                <HeaderImage />
+            </div>
             <div className="bg-white rounded- shadow-lg px-3">
                 <HeaderText 
                     heading={eventInfo.heading}
