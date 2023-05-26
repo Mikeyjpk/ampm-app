@@ -16,7 +16,7 @@ export default async function Home() {
   if (eventInfo.length === 0) {
     return (
       <Container>
-        <div className='px-4'>
+        <div className=''>
           <HeaderImage />
         </div>
         <div className='text-xl pt-10 font-semibold'>

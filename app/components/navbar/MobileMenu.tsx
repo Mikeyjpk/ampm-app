@@ -6,6 +6,7 @@ import { signOut } from "next-auth/react";
 import { useRouter } from 'next/navigation';
 
 import { SiFacebook, SiInstagram } from "react-icons/si";
+import { AiFillHome } from "react-icons/ai";
 
 import MenuItem from "./MenuItem";
 
@@ -46,9 +47,9 @@ const MobileMenu: React.FC<MobileMenuProps> = ({visible, currentUser}) => {
                 </>
             ) : (
                 <>  
-                    <div className="flex flex-row gap-2">
+                    <div className="flex flex-row gap-2 align-baseline">
                         <div className="p-3 hover:scale-110 hover:opacity-80">
-                            <a href='https://www.facebook.com/antisocial.au'>
+                            <a href='https://app.facebook.com/antisocial.au'>
                                 <SiFacebook size={28} />
                             </a>
                         </div>
@@ -56,6 +57,11 @@ const MobileMenu: React.FC<MobileMenuProps> = ({visible, currentUser}) => {
                             <a href='https://www.instagram.com/antisocial.au/'>
                                 <SiInstagram size={28}/>
                             </a>
+                        </div>
+                        <div className="px-3 py-2.5 hover:scale-110 hover:opacity-80">
+                            <div onClick={() => router.push('/')}>
+                                <AiFillHome size={30}/>
+                            </div>
                         </div>
                     </div >  
                 </>

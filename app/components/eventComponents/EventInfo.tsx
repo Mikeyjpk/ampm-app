@@ -36,9 +36,6 @@ const EventInfo = ({
                     <div>
                         Burdekin Saturdays is a two-level party takeover at the Burdekin Hotel, making dance floor heat from 8pm till late. Anti-social will always be on Level 1, with the Ground Floor supplying party beats each week.
                     </div>
-                    <div>
-                        May 20: Resident DJs
-                    </div>
                 </div>
 
                 <div className='flex flex-col'>
