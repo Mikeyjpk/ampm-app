@@ -10,7 +10,7 @@ declare global {
     EBWidgets: {
       createWidget: (options: {
         widgetType: string;
-        eventId: string;
+        eventId: string | null;
         modal: boolean;
         modalTriggerElementId: string;
         onOrderComplete: () => void;
@@ -19,7 +19,13 @@ declare global {
   }
 }
 
-const EventBriteButton = () => {
+interface EventBriteButtonProps {
+  eventIdNumber: string | null;
+}
+
+const EventBriteButton: React.FC<EventBriteButtonProps> = ({
+  eventIdNumber
+}) => {
   // Example callback function
   const orderComplete = useCallback(() => {
       console.log('Order complete!');
@@ -35,9 +41,9 @@ const EventBriteButton = () => {
     script.onload = () => {
       window.EBWidgets.createWidget({
         widgetType: 'checkout',
-        eventId: '627499787757',
+        eventId: eventIdNumber,
         modal: true,
-        modalTriggerElementId: 'eventbrite-widget-modal-trigger-627499787757',
+        modalTriggerElementId: `eventbrite-widget-modal-trigger-${eventIdNumber}`,
         onOrderComplete: orderComplete
       });
     };
@@ -64,35 +70,22 @@ const EventBriteButton = () => {
       </noscript>
 
       {/* You can customize this button any way you like */}
-      <div 
-        className='
-          fixed
-          bottom-0
-          shadow-xl
+      <div> 
+          <div className='bg-white flex flex-row justify-center w-full pb-6 pt-10 shadow-2xl'>
+              <button id={`eventbrite-widget-modal-trigger-${eventIdNumber}`} type="button" 
+                className='
+                w-11/12 
+                bg-orange-600 
+                rounded-lg
+                h-12 
+                hover:bg-orange-500
 
-          flex 
-          flex-col
-          w-full
-          justify-center 
-          items-center
-          
-          bg-white 
-          py-4 
-          px-2 
-          rounded-sm
-          '
-        > 
-          <div className='text-neutral-800 py-4 px-2 font-semibold'>
-            $12.56 - $20
-          </div>
-          <div className='flex flex-row justify-center'>
-            <div className='text-md text-white font-semibold'>
-              <button id="eventbrite-widget-modal-trigger-627499787757" type="button">
-                <div className='bg-orange-600 py-4 px-48 rounded-lg'>
-                  Get tickets
-                </div>
+                text-md 
+                text-white
+                '
+              >
+                Get tickets
               </button>
-            </div>
           </div>
       </div>
     </>

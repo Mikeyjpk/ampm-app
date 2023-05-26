@@ -3,7 +3,7 @@
 import { IconType } from "react-icons";
 
 interface ButtonProps {
-    label: string;
+    label: string | undefined;
     onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
     disabled?: boolean;
     outline?: boolean;
@@ -33,13 +33,13 @@ const Button: React.FC<ButtonProps> = ({
             hover:opacity-80
             transition
             ${menuItem ? 'w-1/5' : 'w-full'}
-            ${outline ? 'bg-white' : 'bg-violet-600'}
-            ${outline ? 'border-black' : 'bg-violet-600'}
+            ${outline ? '' : 'bg-neutral-700'}
+            ${outline ? 'border-black' : ''}
             ${outline ? 'text-black' : 'text-white'}
             ${small ? 'text-sm' : 'text-md'}
             ${small ? 'py-1' : 'py-3'}
             ${small ? 'font-light' : 'font-semibold'}
-            ${small ? 'border-[1px]' : 'border-2'}
+            ${small ? 'border-[1px]' : ''}
         `}
         >
             {Icon && (

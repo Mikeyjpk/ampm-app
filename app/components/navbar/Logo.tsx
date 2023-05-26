@@ -10,6 +10,7 @@ const Logo = () => {
     return (
         <div className="">
             <Image 
+                onClick={() => router.push('/')}
                 alt="Logo"
                 className="md:block cursor-pointer hover:scale-110 transition"
                 height="175"

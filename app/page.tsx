@@ -1,23 +1,47 @@
-'use client'
+import { titleFont } from './fonts';
+import getCurrentUser from './actions/getCurrentUser';
+import getEventInfo from './actions/getEventInfo';
 
+import HeaderImage from './components/HeaderImage';
+import ClientOnly from './components/ClientOnly';
 import Container from './components/Container';
-import HeaderImage from './components/eventDisplay/HeaderImage';
-import EventDisplay from './components/eventDisplay/EventDisplay';
+import EventCard from './components/eventComponents/EventCard';
+import Heading from './components/Heading';
 
-export default function Home() {
+export default async function Home() {
+  const currentUser = await getCurrentUser();
+  const eventInfo = await getEventInfo();
+
   return (
-    <div>
-      <HeaderImage/>
+    <ClientOnly>
+      <div className='px-4'>
+        <HeaderImage />
+      </div>
       <Container>
-        < EventDisplay 
-          title='ANTI//SOCIAL'
-          shortDate="Jun 10"
-          subtitle="Alternative, Rock, Pop-Punk & Emo Anthems from 10:00pm 'til they kick us out, every Saturday night."
-          allAges={false}
-          fullDate='Sat, 10 Jun 2023 8:00 PM'
-        />
+          <div className="bg-white rounded-xl py-6 shadow-lg mt-2">
+            <div className={`${titleFont.className} flex justify-center`}>
+                <div className='text-4xl p-3 md:text-6xl md:p-10'>
+                    <Heading 
+                        title="upcoming events"
+                    />
+                </div>
+            </div>
+            <div className="flex flex-col mx-2 mt-2 py-6 px-3">
+                <div className="flex flex-col gap-8 p-2">
+                    {eventInfo.map((eventInfo) => {
+                        return (
+                          <EventCard 
+                              key={eventInfo.id}
+                              data={eventInfo}
+                              currentUser={currentUser}
+                          />
+                        )
+                    })}
+                </div>
+            </div>
+          </div>
       </Container>
-    </div>
+    </ClientOnly>
   )
 }
 

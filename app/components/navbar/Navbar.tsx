@@ -1,5 +1,7 @@
 'use client'
 
+import { SafeUser } from "@/app/types";
+
 import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
 
@@ -11,7 +13,14 @@ import Container from "../Container";
 import MobileMenu from "./MobileMenu";
 import NavMenu from "./NavMenu";
 
-const Navbar = () => {
+
+interface NavbarProps {
+    currentUser?: SafeUser | null;
+}
+
+const Navbar: React.FC<NavbarProps> = ({
+    currentUser
+}) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleOpen = useCallback(() => {
@@ -27,14 +36,13 @@ const Navbar = () => {
                         <Logo />
 
                         {/* Mobile menu */}
-                        <div onClick={toggleOpen} className="cursor-pointer transition md:hidden"> 
+                        <div onClick={toggleOpen} className="cursor-pointer transition"> 
                             { isOpen ? (<SiFacepunch size={26}/>) : ( <GiHamburgerMenu size={26} />)}
+                            < MobileMenu currentUser={currentUser} visible={isOpen}/>
                         </div>
-                        < MobileMenu visible={isOpen}/>
-
-                        {/* Desktop menu */}
-                        <div className="hidden md:block">
-                            <NavMenu visible={true}/>
+                        {/* admin access */}
+                        <div className="hidden">
+                            <NavMenu visible={false}/>
                         </div>
                         
                     </div>
