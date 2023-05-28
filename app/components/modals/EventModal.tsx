@@ -9,6 +9,9 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+dayjs.extend(utc);
 
 enum STEPS {
     stepOne = 0,
@@ -36,7 +39,8 @@ const EventModal = () => {
         defaultValues: {
             heading: '',
             subtitle: '',
-            date: '',
+            date: dayjs().format('YYYY-MM-DD'),
+            time: '20:00',
             allAges: false,
             eventId: '',
 
@@ -51,14 +55,21 @@ const EventModal = () => {
         setStep((value) => value + 1);
     };
 
-    const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    const onSubmit: SubmitHandler<FieldValues> = ({ date, time, ...newEvent }) => {
         if (step !== STEPS.stepTwo) {
           return onNext();
         }
-        
+
+        //before sending the date and time to the server, we need to:
+        //- combine them into a single string
+        //- load them into dayjs
+        //- convert them to an ISO string, including the UTC offset, so the time is UTC
+        const dayjsDate = dayjs(`${date} ${time}`, `YYYY-MM-DD HH:mm`);
+        newEvent.date = dayjsDate.toISOString();
+
         setIsLoading(true);
-    
-        axios.post('/api/events', data)
+
+        axios.post('/api/events', newEvent)
         .then(() => {
           toast.success('Event Created!');
           router.refresh();
@@ -131,6 +142,17 @@ const EventModal = () => {
                 register={register}
                 errors={errors}
                 required
+                type="date"
+            />
+            <hr />
+            <Input 
+                id="time"
+                label="Time"
+                disabled={isLoading}
+                register={register}
+                errors={errors}
+                required
+                type="time"
             />
         </div>
         )

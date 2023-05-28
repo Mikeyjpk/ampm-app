@@ -10,7 +10,7 @@ import { MdLocationPin } from "react-icons/md"
 interface HeaderProps {
     heading: string | null;
     subtitle: string | null;
-    date: string | null;
+    date: Date;
     allAges?: boolean;
 }
 
@@ -21,13 +21,16 @@ const HeaderText: React.FC<HeaderProps> = ({
     allAges,
     
 }) => {
+
+    const dateString = date.toString();
+
     return (
         <div className='flex flex-col px-2'>
 
             <div className="flex justify-between align-baseline pt-3">
                 <div className={titleFont.className}>
                     <div className='text-xl'>
-                        {date}
+                        {dateString}
                     </div>
                 </div>
                 <div>
@@ -76,7 +79,7 @@ const HeaderText: React.FC<HeaderProps> = ({
                                 Date & Time
                             </div>
                             <div>
-                                {date}
+                                {dateString}
                             </div>
                         </div>
                     </div>

@@ -6,16 +6,23 @@ import useEventModal from "../components/hooks/useEventModal";
 
 const AdminTools = () => {
     const eventModal = useEventModal();
-    const easterEggModal = useEventModal();
     const router = useRouter();
 
     return (
         <>
             <div className="w-4/6 lg:w-1/6">
-                <Button 
-                    label="Create"
-                    onClick={eventModal.onOpen}
-                />
+                <div className="p-4">
+                    <Button 
+                        label="Create"
+                        onClick={eventModal.onOpen}
+                    />
+                </div>
+                <div className="p-4">
+                    <Button 
+                        label="Delete"
+                        onClick={() => router.push('/')}
+                    />
+                </div>
             </div>
         </>
     )

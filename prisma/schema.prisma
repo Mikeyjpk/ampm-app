@@ -26,10 +26,10 @@ model Event {
   heading         String?
   allAges         Boolean?
   subtitle        String?
-  date            String?
+  date            DateTime 
   price           String?
   eventId         String?
   imageSrc        String?
   createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
+  updatedAt       DateTime? @updatedAt
 }

@@ -9,7 +9,7 @@ import RegisterModal from './components/modals/RegisterModal'
 import LoginModal from './components/modals/LoginModal'
 import getCurrentUser from './actions/getCurrentUser'
 import EventModal from './components/modals/EventModal'
-import EventBriteButton from './components/EventBriteButton'
+
 
 export const metadata = {
   title: 'Anti Social',

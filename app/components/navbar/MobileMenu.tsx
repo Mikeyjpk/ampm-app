@@ -9,6 +9,8 @@ import { SiFacebook, SiInstagram } from "react-icons/si";
 import { AiFillHome } from "react-icons/ai";
 
 import MenuItem from "./MenuItem";
+import useRegisterModal from "../hooks/useRegisterModal";
+
 
 interface MobileMenuProps {
     currentUser?: SafeUser | null;
@@ -18,6 +20,8 @@ interface MobileMenuProps {
 
 const MobileMenu: React.FC<MobileMenuProps> = ({visible, currentUser}) => {
     const router = useRouter();
+    const registerModal = useRegisterModal();
+
     if (!visible) {
         return null;
     }
@@ -63,6 +67,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({visible, currentUser}) => {
                                 <AiFillHome size={30}/>
                             </div>
                         </div>
+                        <MenuItem label="Create" onClick={registerModal.onOpen}/>
                     </div >  
                 </>
             )}

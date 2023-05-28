@@ -8,6 +8,7 @@ import Container from './components/Container';
 import EventCard from './components/eventComponents/EventCard';
 import Heading from './components/Heading';
 import EmptyState from './components/EmptyState';
+import Button from './components/Button';
 
 export default async function Home() {
   const currentUser = await getCurrentUser();
