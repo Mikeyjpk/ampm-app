@@ -1,4 +1,5 @@
 import { titleFont } from './fonts';
+import { BsFillEmojiFrownFill } from 'react-icons/bs'
 import getCurrentUser from './actions/getCurrentUser';
 import getEventInfo from './actions/getEventInfo';
 
@@ -8,7 +9,6 @@ import Container from './components/Container';
 import EventCard from './components/eventComponents/EventCard';
 import Heading from './components/Heading';
 import EmptyState from './components/EmptyState';
-import Button from './components/Button';
 
 export default async function Home() {
   const currentUser = await getCurrentUser();
@@ -32,32 +32,37 @@ export default async function Home() {
 
   return (
     <ClientOnly>
-      <div className='px-4'>
-        <HeaderImage />
-      </div>
       <Container>
-          <div className="bg-white rounded-xl py-6 shadow-lg mt-2">
-            <div className={`${titleFont.className} flex justify-center`}>
-                <div className='text-4xl p-3 md:text-6xl md:p-10'>
-                    <Heading 
-                        title="upcoming events"
-                    />
-                </div>
+        <div className='flex flex-col gap-3'>
+          <HeaderImage />
+            <div className="flex flex-col bg-white rounded-t-md rounded-b-xl shadow-2xl pt-4 pb-4">
+              <div className={`${titleFont.className} flex justify-center text-neutral-800 text-4xl pt-3 pb-6 border-b-2`}>
+                <Heading 
+                    title="upcoming events"
+                />
+              </div>
+                <div className="flex flex-col gap-6 p-1 px-10">
+                  {eventInfo.map((eventInfo) => {
+                      return (
+                        <EventCard 
+                            key={eventInfo.id}
+                            data={eventInfo}
+                            currentUser={currentUser}
+                        />
+                      )
+                  })} 
+              </div>
+              <div className='flex flex-row justify-center pt-4'>
+                < BsFillEmojiFrownFill size={30} className='text-neutral-100'/>
+                < BsFillEmojiFrownFill size={30} className='text-neutral-200'/>
+                < BsFillEmojiFrownFill size={30} className='text-neutral-300'/>
+                < BsFillEmojiFrownFill size={30} className='text-neutral-400'/>
+                < BsFillEmojiFrownFill size={30} className='text-neutral-300'/>
+                < BsFillEmojiFrownFill size={30} className='text-neutral-200'/>
+                < BsFillEmojiFrownFill size={30} className='text-neutral-100'/>
+              </div>
             </div>
-            <div className="flex flex-col mx-2 mt-2 py-6 px-3">
-                <div className="flex flex-col gap-8 p-2">
-                    {eventInfo.map((eventInfo) => {
-                        return (
-                          <EventCard 
-                              key={eventInfo.id}
-                              data={eventInfo}
-                              currentUser={currentUser}
-                          />
-                        )
-                    })}
-                </div>
-            </div>
-          </div>
+        </div>
       </Container>
     </ClientOnly>
   )

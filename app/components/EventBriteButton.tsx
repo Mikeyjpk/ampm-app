@@ -71,7 +71,8 @@ const EventBriteButton: React.FC<EventBriteButtonProps> = ({
 
       {/* You can customize this button any way you like */}
       <div> 
-          <div className='bg-white flex flex-row justify-center w-full pb-6 pt-10 shadow-2xl'>
+          <div className='bg-white flex flex-col items-center w-full pb-6 pt-4 gap-6 border-t-2 border-dashed '>
+              <div>$17.75-$25</div>
               <button id={`eventbrite-widget-modal-trigger-${eventIdNumber}`} type="button" 
                 className='
                 w-11/12 

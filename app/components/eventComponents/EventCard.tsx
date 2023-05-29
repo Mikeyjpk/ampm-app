@@ -1,12 +1,12 @@
 'use client'
 import axios from "axios";
-import { useRouter } from "next/navigation";
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
+
+import { useRouter } from "next/navigation";
 import { SafeEventInfo, SafeUser } from "../../types";
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import advancedFormat from 'dayjs/plugin/advancedFormat';
-import toast from 'react-hot-toast';
 dayjs.extend(advancedFormat);
 dayjs.extend(utc);
 
@@ -50,6 +50,10 @@ const EventCard: React.FC<EventCardProps> = ({
     //         toast.error(`failed to delete event - ${e.message}`);
     //     }
     // }
+    
+    if (hasAlreadyOccurred) {
+        return null;
+    }
 
     return (
         <div className="py-2 border-b-2 border-dashed pb-4 relative">  
@@ -59,21 +63,13 @@ const EventCard: React.FC<EventCardProps> = ({
                         {dateString}
                     </div>
                 </div>
-                <div className="w-2/6">
-                    <Button 
-                        label="Tickets"
-                        onClick={() => router.push(`/eventPage/${data.id}`)}
-                        disabled={hasAlreadyOccurred}
-                    />
-                </div>
-                {/* { currentUser && (
                     <div className="w-2/6">
-                    <Button 
-                        label="Delete"
-                        onClick={handleDeleteClick}
-                    />
+                        <Button 
+                            label="Tickets"
+                            onClick={() => router.push(`/eventPage/${data.id}`)}
+                            disabled={hasAlreadyOccurred}
+                        />
                     </div>
-                )} */}
             </div>
         </div>
     )

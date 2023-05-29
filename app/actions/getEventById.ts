@@ -21,7 +21,7 @@ export default async function getEventById(params: IParams) {
         return {
             ...eventInfo,
             createdAt: eventInfo.createdAt.toISOString()
-            // updatedAt: eventInfo.updatedAt.toISOString()
+            //updatedAt: eventInfo.updatedAt.toISOString()
         }
     } catch (error: any) {
         throw new Error(error)

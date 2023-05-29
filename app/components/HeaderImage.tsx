@@ -7,7 +7,7 @@ const HeaderImage = () => {
         <div>
             <div className='flex justify-center items-center'>
                 <Image 
-                    className='w-full rounded-xl lg:w-10/12 shadow-md'
+                    className='w-full rounded-md shadow-md'
                     src='/images/anti-social-hero.png' 
                     alt='hero'
                     width={1000} 

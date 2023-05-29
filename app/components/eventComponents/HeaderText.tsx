@@ -1,7 +1,6 @@
 'use client'
 
 import { titleFont } from "@/app/fonts"
-import { title } from "process"
 
 import { AiTwotoneCalendar } from "react-icons/ai"
 import { BsHearts } from "react-icons/bs"
@@ -10,7 +9,7 @@ import { MdLocationPin } from "react-icons/md"
 interface HeaderProps {
     heading: string | null;
     subtitle: string | null;
-    date: Date;
+    date: string;
     allAges?: boolean;
 }
 
@@ -25,14 +24,13 @@ const HeaderText: React.FC<HeaderProps> = ({
     const dateString = date.toString();
 
     return (
-        <div className='flex flex-col px-2'>
+        <div className='flex flex-col'>
 
             <div className="flex justify-between align-baseline pt-3">
-                <div className={titleFont.className}>
-                    <div className='text-xl'>
-                        {dateString}
-                    </div>
+                <div className='text-sm font-semibold'>
+                    {dateString}
                 </div>
+                
                 <div>
                     <div className='flex flex-row bg-orange-200 w-20 h-4 items-center justify-center rounded-full'>
                         <div className="font-semibold text-xs">
@@ -61,7 +59,7 @@ const HeaderText: React.FC<HeaderProps> = ({
                 Part of the <a href='https://www.eventbrite.com.au/cc/burdekin-saturdays-2188579' className='text-blue-600 hover:underline'>Burdekin Saturdays</a> collection
             </div>
 
-            <div className='font-semibold text-neutral-800'>
+            <div className='text-neutral-800 text-md font-semibold'>
                 {subtitle} 
             </div>
 

@@ -17,12 +17,6 @@ const AdminTools = () => {
                         onClick={eventModal.onOpen}
                     />
                 </div>
-                <div className="p-4">
-                    <Button 
-                        label="Delete"
-                        onClick={() => router.push('/')}
-                    />
-                </div>
             </div>
         </>
     )

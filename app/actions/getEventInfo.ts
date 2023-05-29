@@ -4,7 +4,7 @@ export default async function getEventInfo() {
     try {
         const eventInfo = await prisma.event.findMany({
             orderBy: {
-                createdAt: 'asc'
+                date: 'asc'
             }
         });
 

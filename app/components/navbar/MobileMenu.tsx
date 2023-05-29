@@ -67,7 +67,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({visible, currentUser}) => {
                                 <AiFillHome size={30}/>
                             </div>
                         </div>
-                        <MenuItem label="Create" onClick={registerModal.onOpen}/>
+                        {/* <MenuItem label="Create" onClick={registerModal.onOpen}/> */}
                     </div >  
                 </>
             )}

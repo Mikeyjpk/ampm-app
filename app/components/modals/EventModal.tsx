@@ -103,29 +103,32 @@ const EventModal = () => {
 
     let bodyContent = (
         <div className="flex flex-col gap-8">
-            <Input 
-                id="heading"
-                label="Heading"
-                disabled={isLoading}
-                register={register}
-                errors={errors}
-                required
-            />
-            < hr />
-            <Input 
-                id="subtitle"
-                label="Subtitle"
-                disabled={isLoading}
-                register={register}
-                errors={errors}
-                required
-            />
+            <div className="flex justify-center text-neutral-700 font-light">
+                fields not required
+            </div>
+                <Input 
+                    id="heading"
+                    label="Heading"
+                    disabled={isLoading}
+                    register={register}
+                    errors={errors}
+                />
+                <Input 
+                    id="subtitle"
+                    label="Subtitle"
+                    disabled={isLoading}
+                    register={register}
+                    errors={errors}
+                />
         </div>
     )
    
     if (step === STEPS.stepTwo) {
         bodyContent = (
             <div className="flex flex-col gap-8">
+            <div className="flex justify-center text-red-400 font-light">
+                Required
+            </div>
             <Input 
                 id="eventId"
                 label="EventId"

@@ -33,7 +33,7 @@ const Button: React.FC<ButtonProps> = ({
             hover:opacity-80
             transition
             ${menuItem ? 'w-1/5' : 'w-full'}
-            ${outline ? '' : 'bg-neutral-700'}
+            ${outline ? '' : 'bg-neutral-800'}
             ${outline ? 'border-black' : 'border-black'}
             ${outline ? 'text-black' : 'text-white'}
             ${small ? 'text-sm' : 'text-md'}
