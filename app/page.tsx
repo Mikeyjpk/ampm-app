@@ -36,12 +36,12 @@ export default async function Home() {
         <div className='flex flex-col gap-3'>
           <HeaderImage />
             <div className="flex flex-col bg-white rounded-t-md rounded-b-xl shadow-2xl pt-4 pb-4">
-              <div className={`${titleFont.className} flex justify-center text-neutral-800 text-4xl pt-3 pb-6 border-b-2`}>
+              <div className={`${titleFont.className} flex justify-center text-neutral-800 text-4xl py-4 border-b-2 border-gray-200`}>
                 <Heading 
                     title="upcoming events"
                 />
               </div>
-                <div className="flex flex-col gap-6 p-1 px-10">
+                <div className="flex flex-col gap-6 p-1 px-3">
                   {eventInfo.map((eventInfo) => {
                       return (
                         <EventCard 

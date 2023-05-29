@@ -33,7 +33,7 @@ const EventCard: React.FC<EventCardProps> = ({
     //convert the date to a dayjs object
     const date = dayjs(data.date).local();
     //format as a nice date string
-    const dateString = date.format(`dddd MMMM Do YYYY`);
+    const dateString = date.format(`ddd. MMMM Do YYYY`);
     //for info on how to display a date, check this link
     //https://day.js.org/docs/en/display/format
     //or advanced format plugin
@@ -56,10 +56,10 @@ const EventCard: React.FC<EventCardProps> = ({
     }
 
     return (
-        <div className="py-2 border-b-2 border-dashed pb-4 relative">  
-            <div className="flex flex-row justify-between md:justify-evenly align-baseline px-4">
-                <div className="text-md pt-3.5">
-                    <div className={hasAlreadyOccurred ? "": "font-semibold"}>
+        <div className="py-4 border-b-2 border-dotted relative">  
+            <div className="flex flex-row justify-between md:justify-evenly align-baseline">
+                <div className="text-md pt-3 font-semibold">
+                    <div className="pl-4">
                         {dateString}
                     </div>
                 </div>

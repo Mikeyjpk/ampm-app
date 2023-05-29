@@ -11,7 +11,7 @@ const EventInfo = ({
                 About this event
             </div>
             <div className='flex flex-col gap-4 pb-4'>
-                <div className='border-b-2 border-dashed border-neutral-800 pb-3'>
+                <div className='border-b-2 border-dashed border-neutral-600 pb-3'>
                     <div className='font-semibold'>
                         ANTI//SOCIAL
                     </div>
@@ -30,7 +30,7 @@ const EventInfo = ({
                         </a> 
                     </div>
                 </div>
-                <div className='border-b-2 border-dashed border-neutral-800 pb-3'>
+                <div className='border-b-2 border-dashed border-neutral-600 pb-3'>
                     <div className='font-semibold'>
                         Burdekin Saturdays
                     </div>
