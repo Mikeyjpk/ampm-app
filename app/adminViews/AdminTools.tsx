@@ -10,11 +10,15 @@ const AdminTools = () => {
 
     return (
         <>
-            <div className="w-4/6 lg:w-1/6">
-                <div className="p-4">
+            <div className="w-2/5">
+                <div className="flex flex-col gap-6">
                     <Button 
                         label="Create"
                         onClick={eventModal.onOpen}
+                    />
+                    <Button 
+                        label="Delete"
+                        onClick={() => router.push('/eventViews')}
                     />
                 </div>
             </div>

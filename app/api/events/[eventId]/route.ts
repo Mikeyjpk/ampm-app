@@ -7,22 +7,23 @@ interface IParams {
     eventId?: string;
 }
 
-export async function POST(
+export async function DELETE(
+    
     request: Request,
-    { params }: { params: IParams }
+    { params }: { params: IParams } 
     ) {
-        const currentUser = getCurrentUser();
 
-        if (!currentUser) {
-            return NextResponse.error();
-        }
+    const currentUser = getCurrentUser();
 
-        const { eventId } = params;
-        const event = await prisma.event.delete({
-            where: {
-                id: eventId,
-            },
-        });
+    if (!currentUser) {
+        return NextResponse.error();
+    }
 
-        return NextResponse.json(event);
+    const event = await prisma.event.delete({
+        where:{
+            id: params.eventId
+          }
+    });
+
+    return NextResponse.json(event);
 }

@@ -12,12 +12,13 @@ import EmptyState from './components/EmptyState';
 
 export default async function Home() {
   const currentUser = await getCurrentUser();
-  const eventInfo = await getEventInfo();
+  const eventInfo = await getEventInfo(false);
+  // true will show expired events
 
   if (eventInfo.length === 0) {
     return (
       <Container>
-        <div className=''>
+        <div>
           <HeaderImage />
         </div>
         <div className='text-xl pt-10 font-semibold'>
@@ -41,7 +42,7 @@ export default async function Home() {
                     title="upcoming events"
                 />
               </div>
-                <div className="flex flex-col gap-6 p-1 px-3">
+                <div className="flex flex-col gap-2 mt-2">
                   {eventInfo.map((eventInfo) => {
                       return (
                         <EventCard 

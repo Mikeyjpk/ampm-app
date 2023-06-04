@@ -20,28 +20,27 @@ const AdminViewsClient: React.FC<AdminViewsClientProps> = ({ currentUser }) => {
     return (
         <>  
             <Container>
-                <div className="pt-10">
-                    <div className="bg-white rounded-3xl shadow-md pt-10 pb-2 text-xl font-semibold">
+                <div className="bg-white rounded-3xl shadow-md pt-10 mt-6 pb-2">
+                    <div className="text-2xl font-semibold">
                         <Heading 
                             title="Admin Tools"
                             center
                         />
-                        {currentUser ? (
-                            <div className="flex flex-col gap-8 p-10 mt-10 items-center">
-                                < AdminTools />
-                            </div>
-                        ) : (
-
-                            <div className="flex flex-col gap-3 p-3 mt-8 mb-4 items-center">
-                                <div className="w-5/6 md:w-5/6 lg:w-1/6">
-                                    < Button 
-                                        label="Sign In"
-                                        onClick={loginModal.onOpen}
-                                    />
-                                </div>
-                            </div>
-                        )}
                     </div>
+                    {currentUser ? (
+                        <div className="flex flex-col gap-8 p-6 mt-6 items-center">
+                            < AdminTools />
+                        </div>
+                    ) : (
+                          <div className="flex flex-col gap-3 p-3 mt-8 mb-4 items-center">
+                            <div className="w-2/5">
+                                < Button 
+                                    label="Sign In"
+                                    onClick={loginModal.onOpen}
+                                />
+                            </div>
+                        </div>
+                    )}
                 </div>
             </Container>
         </> 

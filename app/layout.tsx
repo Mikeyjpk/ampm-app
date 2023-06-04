@@ -32,7 +32,7 @@ export default async function RootLayout({
           <LoginModal />
           <Navbar currentUser={currentUser}/>
         </ClientOnly>
-        <div className='h-full w-full pt-16 bg-neutral-100'>
+        <div className='h-100vh w-full pt-16 bg-neutral-100'>
           {children}
         </div>
       </body>

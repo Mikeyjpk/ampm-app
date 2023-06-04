@@ -1,6 +1,4 @@
 import getEventById from "@/app/actions/getEventById";
-import { SafeEventInfo, SafeUser } from "../../types";
-
 
 import ClientOnly from "@/app/components/ClientOnly";
 import EmptyState from "@/app/components/EmptyState";
