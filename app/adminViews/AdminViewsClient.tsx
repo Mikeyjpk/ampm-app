@@ -9,6 +9,7 @@ import Button from "../components/Button";
 import Container from "../components/Container";
 import Heading from "../components/Heading";
 import AdminTools from "./AdminTools";
+import useRegisterModal from "../components/hooks/useRegisterModal";
 
 interface AdminViewsClientProps {
     currentUser: SafeUser | null;
@@ -16,6 +17,7 @@ interface AdminViewsClientProps {
 
 const AdminViewsClient: React.FC<AdminViewsClientProps> = ({ currentUser }) => {
     const loginModal = useLoginModal();
+    const registerModal = useRegisterModal();
 
     return (
         <>  
@@ -39,6 +41,13 @@ const AdminViewsClient: React.FC<AdminViewsClientProps> = ({ currentUser }) => {
                                     onClick={loginModal.onOpen}
                                 />
                             </div>
+                            {/*  create an admin account
+                            <div className="w-2/5">
+                                < Button 
+                                    label="Create"
+                                    onClick={registerModal.onOpen}
+                                />
+                            </div> */}
                         </div>
                     )}
                 </div>
