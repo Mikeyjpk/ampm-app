@@ -53,7 +53,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({visible, currentUser}) => {
                 <>  
                     <div className="flex flex-row gap-2 align-baseline">
                         <div className="p-3 hover:scale-110 hover:opacity-80">
-                            <a href='https://app.facebook.com/antisocial.au'>
+                            <a href='https://www.facebook.com/antisocial.au/'>
                                 <SiFacebook size={28} />
                             </a>
                         </div>
